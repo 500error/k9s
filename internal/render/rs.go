@@ -32,17 +32,17 @@ func (r ReplicaSet) Header(_ string) model1.Header {
 }
 
 var defaultRSHeader = model1.Header{
-	model1.HeaderColumn{Name: "NAMESPACE"},
-	model1.HeaderColumn{Name: "NAME"},
+	model1.HeaderColumn{Name: "NAMESPACE", SortKey: "P"},
+	model1.HeaderColumn{Name: "NAME", SortKey: "N"},
 	model1.HeaderColumn{Name: "VS", Attrs: model1.Attrs{VS: true}},
-	model1.HeaderColumn{Name: "DESIRED", Attrs: model1.Attrs{Align: tview.AlignRight}},
-	model1.HeaderColumn{Name: "CURRENT", Attrs: model1.Attrs{Align: tview.AlignRight}},
-	model1.HeaderColumn{Name: "READY", Attrs: model1.Attrs{Align: tview.AlignRight}},
+	model1.HeaderColumn{Name: "DESIRED", SortKey: "D", Attrs: model1.Attrs{Align: tview.AlignRight}},
+	model1.HeaderColumn{Name: "CURRENT", SortKey: "C", Attrs: model1.Attrs{Align: tview.AlignRight}},
+	model1.HeaderColumn{Name: "READY", SortKey: "R", Attrs: model1.Attrs{Align: tview.AlignRight}},
 	model1.HeaderColumn{Name: "CONTAINERS", Attrs: model1.Attrs{Wide: true}},
 	model1.HeaderColumn{Name: "IMAGES", Attrs: model1.Attrs{Wide: true}},
 	model1.HeaderColumn{Name: "SELECTOR", Attrs: model1.Attrs{Wide: true}},
 	model1.HeaderColumn{Name: "VALID", Attrs: model1.Attrs{Wide: true}},
-	model1.HeaderColumn{Name: "AGE", Attrs: model1.Attrs{Time: true}},
+	model1.HeaderColumn{Name: "AGE", SortKey: "A", Attrs: model1.Attrs{Time: true}},
 }
 
 // Render renders a K8s resource to screen.

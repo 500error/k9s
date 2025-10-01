@@ -17,19 +17,19 @@ import (
 )
 
 var defaultCJHeader = model1.Header{
-	model1.HeaderColumn{Name: "NAMESPACE"},
-	model1.HeaderColumn{Name: "NAME"},
+	model1.HeaderColumn{Name: "NAMESPACE", SortKey: "P"},
+	model1.HeaderColumn{Name: "NAME", SortKey: "N"},
 	model1.HeaderColumn{Name: "VS", Attrs: model1.Attrs{VS: true}},
 	model1.HeaderColumn{Name: "SCHEDULE"},
 	model1.HeaderColumn{Name: "SUSPEND"},
 	model1.HeaderColumn{Name: "ACTIVE"},
-	model1.HeaderColumn{Name: "LAST_SCHEDULE", Attrs: model1.Attrs{Time: true}},
+	model1.HeaderColumn{Name: "LAST_SCHEDULE", SortKey: "L", Attrs: model1.Attrs{Time: true}},
 	model1.HeaderColumn{Name: "SELECTOR", Attrs: model1.Attrs{Wide: true}},
 	model1.HeaderColumn{Name: "CONTAINERS", Attrs: model1.Attrs{Wide: true}},
 	model1.HeaderColumn{Name: "IMAGES", Attrs: model1.Attrs{Wide: true}},
 	model1.HeaderColumn{Name: "LABELS", Attrs: model1.Attrs{Wide: true}},
 	model1.HeaderColumn{Name: "VALID", Attrs: model1.Attrs{Wide: true}},
-	model1.HeaderColumn{Name: "AGE", Attrs: model1.Attrs{Time: true}},
+	model1.HeaderColumn{Name: "AGE", SortKey: "A", Attrs: model1.Attrs{Time: true}},
 }
 
 // CronJob renders a K8s CronJob to screen.

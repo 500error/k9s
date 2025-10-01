@@ -28,9 +28,9 @@ func (Reference) ColorerFunc() model1.ColorerFunc {
 // Header returns a header row.
 func (Reference) Header(string) model1.Header {
 	return model1.Header{
-		model1.HeaderColumn{Name: "NAMESPACE"},
-		model1.HeaderColumn{Name: "NAME"},
-		model1.HeaderColumn{Name: "GVR"},
+		model1.HeaderColumn{Name: "NAMESPACE", SortKey: "P"},
+		model1.HeaderColumn{Name: "NAME", SortKey: "N"},
+		model1.HeaderColumn{Name: "GVR", SortKey: "V"},
 	}
 }
 
