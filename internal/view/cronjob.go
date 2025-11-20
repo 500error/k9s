@@ -80,8 +80,9 @@ func jobCtx(fqn, uid string) ContextFunc {
 
 func (c *CronJob) bindKeys(aa *ui.KeyActions) {
 	aa.Bulk(ui.KeyMap{
-		ui.KeyT: ui.NewKeyAction("Trigger", c.triggerCmd, true),
-		ui.KeyS: ui.NewKeyAction("Suspend/Resume", c.toggleSuspendCmd, true),
+		ui.KeyT:      ui.NewKeyAction("Trigger", c.triggerCmd, true),
+		ui.KeyS:      ui.NewKeyAction("Suspend/Resume", c.toggleSuspendCmd, true),
+		ui.KeyShiftL: ui.NewKeyAction("Sort LastScheduled", c.GetTable().SortColCmd(lastScheduledCol, true), false),
 	})
 }
 

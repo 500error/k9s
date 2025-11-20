@@ -35,7 +35,8 @@ func NewNamespace(gvr *client.GVR) ResourceViewer {
 
 func (n *Namespace) bindKeys(aa *ui.KeyActions) {
 	aa.Bulk(ui.KeyMap{
-		ui.KeyU: ui.NewKeyAction("Use", n.useNsCmd, true),
+		ui.KeyU:      ui.NewKeyAction("Use", n.useNsCmd, true),
+		ui.KeyShiftS: ui.NewKeyAction("Sort Status", n.GetTable().SortColCmd(statusCol, true), false),
 	})
 }
 

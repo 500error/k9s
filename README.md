@@ -383,7 +383,7 @@ K9s uses aliases to navigate most K8s resources.
 | Launch Popeye view                                                              | `:`popeye or pop⏎             | See [popeye](#popeye)                                                  |
 | Sort by previous column                                                         | `<`                           | Sorts by the previous column in the table                              |
 | Sort by next column                                                             | `>`                           | Sorts by the next column in the table                                  |
-| Reverse sort order on selected column                                           | `R`                           | Reverses the sort order on the currently selected column               |
+| Reverse sort order on selected column                                           | `Q`                           | Reverses the sort order on the currently selected column               |
 
 ---
 

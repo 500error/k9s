@@ -40,7 +40,8 @@ func (*HelmChart) chartContext(ctx context.Context) context.Context {
 func (c *HelmChart) bindKeys(aa *ui.KeyActions) {
 	aa.Delete(tcell.KeyCtrlS)
 	aa.Bulk(ui.KeyMap{
-		ui.KeyR: ui.NewKeyAction("Releases", c.historyCmd, true),
+		ui.KeyR:      ui.NewKeyAction("Releases", c.historyCmd, true),
+		ui.KeyShiftS: ui.NewKeyAction("Sort Status", c.GetTable().SortColCmd(statusCol, true), false),
 	})
 }
 

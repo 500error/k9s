@@ -58,8 +58,12 @@ func (w *Workload) bindKeys(aa *ui.KeyActions) {
 	}
 
 	aa.Bulk(ui.KeyMap{
-		ui.KeyY: ui.NewKeyAction(yamlAction, w.yamlCmd, true),
-		ui.KeyD: ui.NewKeyAction("Describe", w.describeCmd, true),
+		ui.KeyShiftK: ui.NewKeyAction("Sort Kind", w.GetTable().SortColCmd("KIND", true), false),
+		ui.KeyShiftS: ui.NewKeyAction("Sort Status", w.GetTable().SortColCmd(statusCol, true), false),
+		ui.KeyShiftR: ui.NewKeyAction("Sort Ready", w.GetTable().SortColCmd("READY", true), false),
+		ui.KeyShiftA: ui.NewKeyAction("Sort Age", w.GetTable().SortColCmd(ageCol, true), false),
+		ui.KeyY:      ui.NewKeyAction(yamlAction, w.yamlCmd, true),
+		ui.KeyD:      ui.NewKeyAction("Describe", w.describeCmd, true),
 	})
 }
 

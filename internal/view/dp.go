@@ -45,7 +45,10 @@ func NewDeploy(gvr *client.GVR) ResourceViewer {
 
 func (d *Deploy) bindKeys(aa *ui.KeyActions) {
 	aa.Bulk(ui.KeyMap{
-		ui.KeyZ: ui.NewKeyAction("ReplicaSets", d.replicaSetsCmd, true),
+		ui.KeyShiftR: ui.NewKeyAction("Sort Ready", d.GetTable().SortColCmd(readyCol, true), false),
+		ui.KeyShiftU: ui.NewKeyAction("Sort UpToDate", d.GetTable().SortColCmd(uptodateCol, true), false),
+		ui.KeyShiftL: ui.NewKeyAction("Sort Available", d.GetTable().SortColCmd(availCol, true), false),
+		ui.KeyZ:      ui.NewKeyAction("ReplicaSets", d.replicaSetsCmd, true),
 	})
 }
 
