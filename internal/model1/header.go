@@ -59,7 +59,8 @@ func (a Attrs) Merge(b Attrs) Attrs {
 // HeaderColumn represent a table header.
 type HeaderColumn struct {
 	Attrs
-	Name string
+	Name    string
+	SortKey string
 }
 
 func (h HeaderColumn) String() string {

@@ -53,7 +53,7 @@ func (p PersistentVolume) Header(_ string) model1.Header {
 }
 
 var defaultPVHeader = model1.Header{
-	model1.HeaderColumn{Name: "NAME"},
+	model1.HeaderColumn{Name: "NAME", SortKey: "N"},
 	model1.HeaderColumn{Name: "CAPACITY", Attrs: model1.Attrs{Capacity: true}},
 	model1.HeaderColumn{Name: "ACCESS MODES"},
 	model1.HeaderColumn{Name: "RECLAIM POLICY"},
@@ -64,7 +64,7 @@ var defaultPVHeader = model1.Header{
 	model1.HeaderColumn{Name: "VOLUMEMODE", Attrs: model1.Attrs{Wide: true}},
 	model1.HeaderColumn{Name: "LABELS", Attrs: model1.Attrs{Wide: true}},
 	model1.HeaderColumn{Name: "VALID", Attrs: model1.Attrs{Wide: true}},
-	model1.HeaderColumn{Name: "AGE", Attrs: model1.Attrs{Time: true}},
+	model1.HeaderColumn{Name: "AGE", SortKey: "A", Attrs: model1.Attrs{Time: true}},
 }
 
 // Render renders a K8s resource to screen.

@@ -84,16 +84,24 @@ func SkinTitle(fmat string, style *config.Frame) string {
 	return fmat
 }
 
-func sortIndicator(sort, asc bool, style *config.Table, name string) string {
+func sortIndicator(sort, asc bool, style *config.Table, name string, sortKey string) string {
+	title := name
+	if len(sortKey) > 0 {
+		if strings.ContainsAny(name, sortKey) {
+			title = strings.Replace(name, sortKey, fmt.Sprintf("[%s::b]%s[::]", style.Header.SorterColor, sortKey), 1)
+		} else {
+			title = fmt.Sprintf("%s ([%s::b]%s[::])", name, style.Header.SorterColor, sortKey)
+		}
+	}
 	if !sort {
-		return name
+		return title
 	}
 
 	order := descIndicator
 	if asc {
 		order = ascIndicator
 	}
-	return fmt.Sprintf("%s[%s::b]%s[::]", name, style.Header.SorterColor, order)
+	return fmt.Sprintf("%s[%s::b]%s[::]", title, style.Header.SorterColor, order)
 }
 
 func formatCell(field string, padding int) string {

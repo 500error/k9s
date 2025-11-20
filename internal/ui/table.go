@@ -487,7 +487,7 @@ func (t *Table) AddHeaderCell(col int, h model1.HeaderColumn) {
 	sc := t.getSortCol()
 	sortCol := h.Name == sc.Name
 	styles := t.styles.Table()
-	c := tview.NewTableCell(sortIndicator(sortCol, sc.ASC, &styles, h.Name))
+	c := tview.NewTableCell(sortIndicator(sortCol, sc.ASC, &styles, h.Name, h.SortKey))
 	c.SetExpansion(1)
 	c.SetSelectable(false)
 	c.SetAlign(h.Align)

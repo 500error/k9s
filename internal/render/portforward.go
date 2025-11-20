@@ -52,15 +52,15 @@ func (PortForward) ColorerFunc() model1.ColorerFunc {
 // Header returns a header row.
 func (PortForward) Header(string) model1.Header {
 	return model1.Header{
-		model1.HeaderColumn{Name: "NAMESPACE"},
-		model1.HeaderColumn{Name: "NAME"},
+		model1.HeaderColumn{Name: "NAMESPACE", SortKey: "P"},
+		model1.HeaderColumn{Name: "NAME", SortKey: "N"},
 		model1.HeaderColumn{Name: "CONTAINER"},
-		model1.HeaderColumn{Name: "PORTS"},
-		model1.HeaderColumn{Name: "URL"},
+		model1.HeaderColumn{Name: "PORTS", SortKey: "P"},
+		model1.HeaderColumn{Name: "URL", SortKey: "U"},
 		model1.HeaderColumn{Name: "C"},
 		model1.HeaderColumn{Name: "N"},
 		model1.HeaderColumn{Name: "VALID", Attrs: model1.Attrs{Wide: true}},
-		model1.HeaderColumn{Name: "AGE", Attrs: model1.Attrs{Time: true}},
+		model1.HeaderColumn{Name: "AGE", SortKey: "A", Attrs: model1.Attrs{Time: true}},
 	}
 }
 

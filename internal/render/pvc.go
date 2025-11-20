@@ -14,16 +14,16 @@ import (
 )
 
 var defaultPVCHeader = model1.Header{
-	model1.HeaderColumn{Name: "NAMESPACE"},
-	model1.HeaderColumn{Name: "NAME"},
-	model1.HeaderColumn{Name: "STATUS"},
-	model1.HeaderColumn{Name: "VOLUME"},
-	model1.HeaderColumn{Name: "CAPACITY", Attrs: model1.Attrs{Capacity: true}},
+	model1.HeaderColumn{Name: "NAMESPACE", SortKey: "P"},
+	model1.HeaderColumn{Name: "NAME", SortKey: "N"},
+	model1.HeaderColumn{Name: "STATUS", SortKey: "S"},
+	model1.HeaderColumn{Name: "VOLUME", SortKey: "V"},
+	model1.HeaderColumn{Name: "CAPACITY", SortKey: "C", Attrs: model1.Attrs{Capacity: true}},
 	model1.HeaderColumn{Name: "ACCESS MODES"},
-	model1.HeaderColumn{Name: "STORAGECLASS"},
+	model1.HeaderColumn{Name: "STORAGECLASS", SortKey: "O"},
 	model1.HeaderColumn{Name: "LABELS", Attrs: model1.Attrs{Wide: true}},
 	model1.HeaderColumn{Name: "VALID", Attrs: model1.Attrs{Wide: true}},
-	model1.HeaderColumn{Name: "AGE", Attrs: model1.Attrs{Time: true}},
+	model1.HeaderColumn{Name: "AGE", SortKey: "A", Attrs: model1.Attrs{Time: true}},
 }
 
 // PersistentVolumeClaim renders a K8s PersistentVolumeClaim to screen.

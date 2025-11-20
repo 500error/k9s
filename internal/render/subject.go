@@ -27,7 +27,7 @@ func (Subject) ColorerFunc() model1.ColorerFunc {
 // Header returns a header row.
 func (Subject) Header(string) model1.Header {
 	return model1.Header{
-		model1.HeaderColumn{Name: "NAME"},
+		model1.HeaderColumn{Name: "NAME", SortKey: "N"},
 		model1.HeaderColumn{Name: "KIND"},
 		model1.HeaderColumn{Name: "FIRST LOCATION"},
 		model1.HeaderColumn{Name: "VALID", Attrs: model1.Attrs{Wide: true}},

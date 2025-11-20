@@ -31,9 +31,9 @@ const (
 )
 
 var defaultNOHeader = model1.Header{
-	model1.HeaderColumn{Name: "NAME"},
+	model1.HeaderColumn{Name: "NAME", SortKey: "N"},
 	model1.HeaderColumn{Name: "STATUS"},
-	model1.HeaderColumn{Name: "ROLE"},
+	model1.HeaderColumn{Name: "ROLE", SortKey: "R"},
 	model1.HeaderColumn{Name: "ARCH", Attrs: model1.Attrs{Wide: true}},
 	model1.HeaderColumn{Name: "TAINTS"},
 	model1.HeaderColumn{Name: "VERSION"},
@@ -41,11 +41,11 @@ var defaultNOHeader = model1.Header{
 	model1.HeaderColumn{Name: "KERNEL", Attrs: model1.Attrs{Wide: true}},
 	model1.HeaderColumn{Name: "INTERNAL-IP", Attrs: model1.Attrs{Wide: true}},
 	model1.HeaderColumn{Name: "EXTERNAL-IP", Attrs: model1.Attrs{Wide: true}},
-	model1.HeaderColumn{Name: "PODS", Attrs: model1.Attrs{Align: tview.AlignRight}},
-	model1.HeaderColumn{Name: "CPU", Attrs: model1.Attrs{Align: tview.AlignRight, MX: true}},
+	model1.HeaderColumn{Name: "PODS", SortKey: "O", Attrs: model1.Attrs{Align: tview.AlignRight}},
+	model1.HeaderColumn{Name: "CPU", SortKey: "C", Attrs: model1.Attrs{Align: tview.AlignRight, MX: true}},
 	model1.HeaderColumn{Name: "CPU/A", Attrs: model1.Attrs{Align: tview.AlignRight, MX: true}},
 	model1.HeaderColumn{Name: "%CPU", Attrs: model1.Attrs{Align: tview.AlignRight, MX: true}},
-	model1.HeaderColumn{Name: "MEM", Attrs: model1.Attrs{Align: tview.AlignRight, MX: true}},
+	model1.HeaderColumn{Name: "MEM", SortKey: "M", Attrs: model1.Attrs{Align: tview.AlignRight, MX: true}},
 	model1.HeaderColumn{Name: "MEM/A", Attrs: model1.Attrs{Align: tview.AlignRight, MX: true}},
 	model1.HeaderColumn{Name: "%MEM", Attrs: model1.Attrs{Align: tview.AlignRight, MX: true}},
 	model1.HeaderColumn{Name: "GPU/A", Attrs: model1.Attrs{Align: tview.AlignRight, MX: true}},
@@ -54,7 +54,7 @@ var defaultNOHeader = model1.Header{
 	model1.HeaderColumn{Name: "SH-GPU/C", Attrs: model1.Attrs{Align: tview.AlignRight, MX: true}},
 	model1.HeaderColumn{Name: "LABELS", Attrs: model1.Attrs{Wide: true}},
 	model1.HeaderColumn{Name: "VALID", Attrs: model1.Attrs{Wide: true}},
-	model1.HeaderColumn{Name: "AGE", Attrs: model1.Attrs{Time: true}},
+	model1.HeaderColumn{Name: "AGE", SortKey: "A", Attrs: model1.Attrs{Time: true}},
 }
 
 // Node renders a K8s Node to screen.

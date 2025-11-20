@@ -46,8 +46,8 @@ func (Rbac) ColorerFunc() model1.ColorerFunc {
 func (Rbac) Header(string) model1.Header {
 	h := make(model1.Header, 0, 10)
 	h = append(h,
-		model1.HeaderColumn{Name: "NAME"},
-		model1.HeaderColumn{Name: "API-GROUP"},
+		model1.HeaderColumn{Name: "NAME", SortKey: "N"},
+		model1.HeaderColumn{Name: "API-GROUP", SortKey: "A"},
 	)
 	h = append(h, rbacVerbHeader()...)
 

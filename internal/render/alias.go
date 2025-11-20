@@ -15,10 +15,10 @@ import (
 )
 
 var defaultAliasHeader = model1.Header{
-	model1.HeaderColumn{Name: "RESOURCE"},
-	model1.HeaderColumn{Name: "GROUP"},
+	model1.HeaderColumn{Name: "RESOURCE", SortKey: "R"},
+	model1.HeaderColumn{Name: "GROUP", SortKey: "A"},
 	model1.HeaderColumn{Name: "VERSION"},
-	model1.HeaderColumn{Name: "COMMAND"},
+	model1.HeaderColumn{Name: "COMMAND", SortKey: "C"},
 }
 
 // Alias renders an aliases to screen.

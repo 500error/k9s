@@ -47,8 +47,8 @@ func (Benchmark) ColorerFunc() model1.ColorerFunc {
 // Header returns a header row.
 func (Benchmark) Header(string) model1.Header {
 	return model1.Header{
-		model1.HeaderColumn{Name: "NAMESPACE"},
-		model1.HeaderColumn{Name: "NAME"},
+		model1.HeaderColumn{Name: "NAMESPACE", SortKey: "P"},
+		model1.HeaderColumn{Name: "NAME", SortKey: "N"},
 		model1.HeaderColumn{Name: "STATUS"},
 		model1.HeaderColumn{Name: "TIME"},
 		model1.HeaderColumn{Name: "REQ/S", Attrs: model1.Attrs{Align: tview.AlignRight}},
@@ -56,7 +56,7 @@ func (Benchmark) Header(string) model1.Header {
 		model1.HeaderColumn{Name: "4XX/5XX", Attrs: model1.Attrs{Align: tview.AlignRight}},
 		model1.HeaderColumn{Name: "REPORT"},
 		model1.HeaderColumn{Name: "VALID", Attrs: model1.Attrs{Wide: true}},
-		model1.HeaderColumn{Name: "AGE", Attrs: model1.Attrs{Time: true}},
+		model1.HeaderColumn{Name: "AGE", SortKey: "A", Attrs: model1.Attrs{Time: true}},
 	}
 }
 

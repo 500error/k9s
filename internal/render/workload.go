@@ -15,13 +15,13 @@ import (
 )
 
 var defaultWKHeader = model1.Header{
-	model1.HeaderColumn{Name: "KIND"},
-	model1.HeaderColumn{Name: "NAMESPACE"},
-	model1.HeaderColumn{Name: "NAME"},
-	model1.HeaderColumn{Name: "STATUS"},
-	model1.HeaderColumn{Name: "READY"},
+	model1.HeaderColumn{Name: "KIND", SortKey: "K"},
+	model1.HeaderColumn{Name: "NAMESPACE", SortKey: "P"},
+	model1.HeaderColumn{Name: "NAME", SortKey: "N"},
+	model1.HeaderColumn{Name: "STATUS", SortKey: "S"},
+	model1.HeaderColumn{Name: "READY", SortKey: "R"},
 	model1.HeaderColumn{Name: "VALID", Attrs: model1.Attrs{Wide: true}},
-	model1.HeaderColumn{Name: "AGE", Attrs: model1.Attrs{Time: true}},
+	model1.HeaderColumn{Name: "AGE", SortKey: "A", Attrs: model1.Attrs{Time: true}},
 }
 
 // Workload renders a workload to screen.

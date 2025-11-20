@@ -56,12 +56,12 @@ func (ImageScan) ColorerFunc() model1.ColorerFunc {
 // Header returns a header row.
 func (ImageScan) Header(string) model1.Header {
 	return model1.Header{
-		model1.HeaderColumn{Name: "SEVERITY"},
-		model1.HeaderColumn{Name: "VULNERABILITY"},
+		model1.HeaderColumn{Name: "SEVERITY", SortKey: "S"},
+		model1.HeaderColumn{Name: "VULNERABILITY", SortKey: "V"},
 		model1.HeaderColumn{Name: "IMAGE"},
-		model1.HeaderColumn{Name: "LIBRARY"},
+		model1.HeaderColumn{Name: "LIBRARY", SortKey: "L"},
 		model1.HeaderColumn{Name: "VERSION"},
-		model1.HeaderColumn{Name: "FIXED-IN"},
+		model1.HeaderColumn{Name: "FIXED-IN", SortKey: "F"},
 		model1.HeaderColumn{Name: "TYPE"},
 	}
 }
